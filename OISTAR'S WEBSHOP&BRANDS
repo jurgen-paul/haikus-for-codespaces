@@ -1,0 +1,13 @@
+npx @sentry/wizard@latest -i nextjs
+<button
+  type="button"
+  onClick={() => {
+    throw new Error("Sentry Frontend Error");
+  }}
+>
+  Throw error
+</button>
+export default (req, res) => {
+  throw new Error("API throw error test");
+  res.status(200).json({ name: "John Doe" });
+};
